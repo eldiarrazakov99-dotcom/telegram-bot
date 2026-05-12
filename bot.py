@@ -14,13 +14,13 @@ SUPPORT_USERNAME = "@veryselov"
 
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
-================= DATA =================
+# ================= DATA =================
 
 user_data = defaultdict(dict) user_step = {}
 
 orders = {} order_id = 1
 
-================= VALIDATION =================
+# ================= VALIDATION =================
 
 def is_valid_gmail(email):
 
@@ -28,7 +28,7 @@ pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
 
 return re.match(pattern, email, re.IGNORECASE)
 
-================= PRICE =================
+# ================= PRICE =================
 
 def calculate_price(subs, region, platform):
 
@@ -161,7 +161,7 @@ elif platform == "TikTok":
     else:
         return "📞 Договорная\nНапишите поддержке для торговли аккаунта"
 
-================= KEYBOARDS =================
+# ================= KEYBOARDS =================
 
 def main_menu_markup():
 
@@ -189,7 +189,7 @@ markup.row(
 
 return markup
 
-================= MAIN MENU =================
+# ================= MAIN MENU =================
 
 def send_main_menu(chat_id):
 
@@ -209,19 +209,19 @@ bot.send_message(
     reply_markup=main_menu_markup()
 )
 
-================= START =================
+# ================= START =================
 
 @bot.message_handler(commands=['start']) def start(message):
 
 send_main_menu(message.chat.id)
 
-================= MENU =================
+# ================= MENU =================
 
 @bot.message_handler(func=lambda m: m.text == "🏠 Меню") def menu_handler(message):
 
 send_main_menu(message.chat.id)
 
-================= REVIEWS =================
+# ================= REVIEWS =================
 
 @bot.message_handler(func=lambda m: m.text == "⭐ Отзывы") def reviews_handler(message):
 
@@ -230,7 +230,7 @@ bot.send_message(
     f"⭐ Отзывы:\n\n{REVIEWS_LINK}"
 )
 
-================= SUPPORT =================
+# ================= SUPPORT =================
 
 @bot.message_handler(func=lambda m: m.text == "🛠 Поддержка") def support_handler(message):
 
@@ -239,7 +239,7 @@ bot.send_message(
     f"🛠 Поддержка:\n\n{SUPPORT_USERNAME}"
 )
 
-================= STATUS =================
+# ================= STATUS =================
 
 @bot.message_handler(func=lambda m: m.text == "📦 Статус заказа") def status_handler(message):
 
@@ -269,7 +269,7 @@ bot.send_message(
     "\n\n".join(result)
 )
 
-================= SELL =================
+# ================= SELL =================
 
 @bot.message_handler(func=lambda m: m.text == "💸 Продать канал") def sell_handler(message):
 
@@ -301,7 +301,7 @@ bot.send_message(
     reply_markup=markup
 )
 
-================= ASK FUNCTIONS =================
+# ================= ASK FUNCTIONS =================
 
 def ask_region(chat_id):
 
@@ -500,7 +500,7 @@ elif method == "📷 QR-код":
         reply_markup=back_markup()
     )
 
-================= CREATE ORDER =================
+# ================= CREATE ORDER =================
 
 def create_order(chat_id, payment_data):
 
@@ -570,7 +570,7 @@ order_id += 1
 user_step.pop(chat_id, None)
 user_data.pop(chat_id, None)
 
-================= BACK =================
+# ================= BACK =================
 
 def handle_back(chat_id):
 
@@ -612,7 +612,7 @@ elif step == "stars":
 elif step == "visa":
     ask_bank(chat_id)
 
-================= CALLBACK =================
+# ================= CALLBACK =================
 
 @bot.callback_query_handler(func=lambda call: True) def callback_handler(call):
 
@@ -666,7 +666,7 @@ try:
 except Exception as e:
     print(e)
 
-================= MAIN =================
+# ================= MAIN =================
 
 @bot.message_handler(content_types=['text', 'photo']) def all_messages(message):
 
@@ -855,7 +855,7 @@ except Exception as e:
 
     send_main_menu(message.chat.id)
 
-================= RUN =================
+# ================= RUN =================
 
 print("Бот запущен")
 
