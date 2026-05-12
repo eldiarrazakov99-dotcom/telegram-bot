@@ -4,9 +4,13 @@ import re
 import traceback
 from collections import defaultdict
 
-TOKEN = "8514273761:AAH3YeenOrWomYPUZve9NadLfwLB1py9P18" ADMIN_ID = 8504692404
+TOKEN = "8514273761:AAH3YeenOrWomYPUZve9NadLfwLB1py9P18"
 
-REVIEWS_LINK = "https://t.me/SanyaRysel" SUPPORT_USERNAME = "@veryselov"
+ADMIN_ID = 8504692404
+
+REVIEWS_LINK = "https://t.me/SanyaRysel"
+
+SUPPORT_USERNAME = "@veryselov"
 
 bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
