@@ -1,4 +1,8 @@
-import telebot from telebot import types import re import traceback from collections import defaultdict
+import telebot
+from telebot import types
+import re
+import traceback
+from collections import defaultdict
 
 TOKEN = "8514273761:AAH3YeenOrWomYPUZve9NadLfwLB1py9P18" ADMIN_ID = 8504692404
 
