@@ -16,7 +16,9 @@ bot = telebot.TeleBot(TOKEN, parse_mode="HTML")
 
 # ================= DATA =================
 
-user_data = defaultdict(dict) user_step = {}
+user_data = defaultdict(dict)
+
+user_step = {}
 
 orders = {} order_id = 1
 
@@ -824,7 +826,7 @@ try:
 
     # VISA
     elif step == "visa":
-
+н
         user_data[chat_id]["bank"] = "💳 VISA"
         user_data[chat_id]["method"] = "💳 Карта"
 
