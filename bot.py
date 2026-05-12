@@ -31,7 +31,7 @@ def is_valid_gmail(email):
 def calculate_price(subs, region):
     subs = int(subs)
 
-    if 1 <= subs <= 10:
+    if 0 <= subs <= 10:
         price = 25
     elif 10 < subs <= 50:
         price = 30
