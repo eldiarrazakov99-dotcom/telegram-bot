@@ -28,9 +28,9 @@ order_id = 1
 
 def is_valid_gmail(email):
 
-pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
+    pattern = r'^[a-zA-Z0-9._%+-]+@gmail\.com$'
 
-return re.match(pattern, email, re.IGNORECASE)
+    return re.match(pattern, email, re.IGNORECASE)
 
 # ================= PRICE =================
 
