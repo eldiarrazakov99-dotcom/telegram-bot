@@ -36,7 +36,7 @@ def is_valid_gmail(email):
 
 def calculate_price(subs, region, platform):
 
-subs = int(subs)
+    subs = int(subs)
 
 # ================= YOUTUBE PRICE =================
 
