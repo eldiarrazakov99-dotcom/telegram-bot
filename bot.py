@@ -20,7 +20,9 @@ user_data = defaultdict(dict)
 
 user_step = {}
 
-orders = {} order_id = 1
+orders = {}
+
+order_id = 1
 
 # ================= VALIDATION =================
 
